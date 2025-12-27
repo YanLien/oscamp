@@ -564,6 +564,9 @@ pub enum AxVCpuExitReason {
     MmioRead { addr: GuestPhysAddr, width: AccessWidth, reg: usize, reg_width: AccessWidth },
     MmioWrite { addr: GuestPhysAddr, width: AccessWidth, data: u64 },
 
+    IoRead { port: Port, width: AccessWidth, },
+    IoWrite { port: Port, width: AccessWidth, data: u64, },
+
     // 外部中断
     ExternalInterrupt { vector: u64 },
 
